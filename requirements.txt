@@ -8,3 +8,4 @@ torch
 mecab-python3
 joblib
 datasets
+unidic-lite
