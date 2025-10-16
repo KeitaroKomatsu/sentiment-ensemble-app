@@ -1,5 +1,6 @@
 # app.py
 import streamlit as st
+import unidic_lite  # noqa: F401
 
 from ensemble_predict import ensemble_predict
 from models.model_lr import mecab_tokenizer  # noqa: F401

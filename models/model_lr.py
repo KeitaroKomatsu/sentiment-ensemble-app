@@ -2,6 +2,7 @@
 import joblib
 import MeCab
 import pandas as pd
+import unidic_lite
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
@@ -11,7 +12,7 @@ TEST = "data/sentiments_val.csv"
 
 
 def mecab_tokenizer(text):
-    tagger = MeCab.Tagger("")
+    tagger = MeCab.Tagger(f"-d {unidic_lite.DICDIR}")  # unidic-lite対応
     tagger.parse("")  # 文字化け対策（初期化）
     node = tagger.parseToNode(text)
     tokens = []

@@ -2,6 +2,7 @@
 import joblib
 import MeCab
 import pandas as pd
+import unidic_lite
 from lightgbm import LGBMClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score, classification_report
@@ -12,7 +13,7 @@ def mecab_tokenizer(text):
     """
     MeCabで日本語文を単語ごとに分割するトークナイザ
     """
-    tagger = MeCab.Tagger("")  # "-Ochasen"は不要（unidic-lite対応）
+    tagger = MeCab.Tagger(f"-d {unidic_lite.DICDIR}")  # unidic-lite
     tagger.parse("")  # 初期化
     node = tagger.parseToNode(text)
     tokens = []

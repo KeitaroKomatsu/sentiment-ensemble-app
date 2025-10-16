@@ -5,13 +5,15 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import unidic_lite
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score
 
 
 # ======== 日本語形態素解析（MeCab） ========
 def mecab_tokenizer(text):
-    tagger = MeCab.Tagger("")  # unidic-lite対応
+
+    tagger = MeCab.Tagger(f"-d {unidic_lite.DICDIR}")  # unidic-lite対応
     tagger.parse("")
     node = tagger.parseToNode(text)
     tokens = []
