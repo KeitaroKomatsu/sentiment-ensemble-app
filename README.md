@@ -208,7 +208,7 @@ streamlit run app.py
 **Keitaro Komatsu**
 
 * Email: [kin29sasuke@outlook.com]
-* GitHub: [github.com/Kei1118](#)
+* GitHub: [github.com/KeitaroKomatsu](#)
 * Keywords: `NLP`, `Machine Learning`, `Streamlit`, `AI Engineer`
 
 ---
