@@ -5,10 +5,6 @@ __pycache__/
 # OS関連
 .DS_Store
 
-# モデルファイル
-*.pkl
-*.pt
-
 # 一時ファイル
 *.log
 *.tmp
